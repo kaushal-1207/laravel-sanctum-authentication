@@ -155,5 +155,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 	Route::get('devicedata', [APIController::class, 'getDeviceData']);
 });
 ````
+- Now Pass Recieved Token as a Header in Postman
 
-![alt text](https://github.com/kaushal-1207/laravel-sanctum-authentication/sanctum_api_auth.png)
+![No Image](https://github.com/kaushal-1207/laravel-sanctum-authentication/blob/main/sanctum_api_auth.png)
+
+> Login/Signup API is not be Secure
