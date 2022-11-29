@@ -12,7 +12,7 @@ Laravel Sanctum provides a featherweight authentication system for SPAs (single 
 ## Getting Started
 ## Step 1: Setup database in .env file
 
-```` 
+```javascript
 DB_DATABASE=DB_NAME
 DB_USERNAME=DB_USERNAME
 DB_PASSWORD=DB_PASSWORD
@@ -20,19 +20,19 @@ DB_PASSWORD=DB_PASSWORD
 
 ## Step 2: Install Laravel Sanctum.
 
-````
+```javascript 
 composer require laravel/sanctum
 ````
 
 ## Step 3: Publish the Sanctum configuration and migration files .
 
-````
+```javascript
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 ````
 
 ## Step 4: Run your database migrations.
 
-````
+```javascript
 php artisan migrate
 ````
 
@@ -40,13 +40,13 @@ php artisan migrate
 
 - Add Below Line in app/Kernel.php
 
-````
+```javascript
 use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 ````
 
 - Add Below Code in api Group Route in Kernel.php
 
-````
+```javascript
 'api' => [
             EnsureFrontendRequestsAreStateful::class,
             'throttle:60,1',
@@ -58,7 +58,7 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 
 - Add Below Code in Already Existing Model Named User
 
-````
+```javascript
 use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
@@ -128,6 +128,7 @@ class UserController extends Controller
 }
 ````
 ## Step 11: Test with postman, Result will be below
+
 ```javascript 
 {
     "user": {
@@ -150,7 +151,7 @@ Route::post("login",[UserController::class,'index']);
 ````
 - Secure All URL by Putting it into Sanctum Authentication Middleware Route
 
-````
+```javascript
 Route::group(['middleware' => 'auth:sanctum'], function () {
 	Route::get('devicedata', [APIController::class, 'getDeviceData']);
 });
