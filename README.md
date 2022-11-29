@@ -156,4 +156,4 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 });
 ````
 
-![alt text](https://github.com/kaushal-1207/laravel-sanctum-authentication/src/image.jpg?raw=true)
+![alt text](https://github.com/kaushal-1207/laravel-sanctum-authentication/sanctum_api_auth.png)
